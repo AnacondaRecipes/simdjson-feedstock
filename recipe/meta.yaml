@@ -1,5 +1,4 @@
 {% set version = "3.10.1" %}
-{% set sha256 = "1e8f881cb2c0f626c56cd3665832f1e97b9d4ffc648ad9e1067c134862bba060" %}
 
 # For dispatching between Unix and Windows
 {% set install_prefix = "." %}  # [unix]
@@ -14,7 +13,7 @@ package:
 
 source:
   url: https://github.com/simdjson/simdjson/archive/v{{ version }}.tar.gz
-  sha256: "{{ sha256 }}"
+  sha256: 1e8f881cb2c0f626c56cd3665832f1e97b9d4ffc648ad9e1067c134862bba060
 
 build:
   number: 0
@@ -22,7 +21,6 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
     - cmake
     - ninja
 
@@ -42,7 +40,6 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
-        - {{ stdlib("c") }}
         - cmake
         - ninja
     test:
