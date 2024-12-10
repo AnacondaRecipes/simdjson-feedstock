@@ -7,6 +7,7 @@ cmake -B build/ \
     -D SIMDJSON_DEVELOPER_MODE=OFF \
     -D SIMDJSON_BUILD_STATIC_LIB=ON \
     -D BUILD_SHARED_LIBS=ON \
+    -D CMAKE_BUILD_TYPE=Release \
     ${CMAKE_ARGS}
 
 cmake --build build/ --parallel "${CPU_COUNT}" --verbose
